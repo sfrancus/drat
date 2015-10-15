@@ -65,7 +65,10 @@
 <script type="text/javascript">
   $("input[name='attachment[]']").change(function() {
     var fileName = $(this).val();
-    $("#file-name").append(fileName + "<span style='float:right;'>x</span>");
+    $("#file-name").html("<strong>Path</strong>: " + fileName + "<a href='' class='x-link'><span class='glyphicon glyphicon-remove pull-right remove-icon'></span></a>");
+  });
+  $(".x-link").click(function() {
+    $("#file-name").html('');
   });
 </script>
 </body>

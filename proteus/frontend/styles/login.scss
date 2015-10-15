@@ -156,6 +156,15 @@ input[readonly] {
 	text-align: left;
 }
 
+.remove-icon {
+	    position: relative;
+    top: 6px;
+}
+
+.x-link, .x-link:active, .x-link:focus, .x-link:visited {
+	color: $h4-color;
+	text-decoration: none;
+}
 
 
 

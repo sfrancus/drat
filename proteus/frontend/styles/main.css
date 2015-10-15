@@ -126,6 +126,14 @@ input[readonly] {
 #file-name {
   text-align: left; }
 
+.remove-icon {
+  position: relative;
+  top: 6px; }
+
+.x-link, .x-link:active, .x-link:focus, .x-link:visited {
+  color: #9C9C9C;
+  text-decoration: none; }
+
 @media screen and (max-width: 480px) {
   button.btn.btn-primary.default-weight.run-button {
     width: 100%;
