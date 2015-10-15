@@ -1,0 +1,128 @@
+$header-font-size: 60px;
+$h4-color: #9C9C9C;
+$grey-font: #cfcfcf;
+$default-weight: 300;
+$line-height: 1.8;
+$input-width: 70%;
+$border-radius: 5px;
+$input-height: 40px;
+$box-font-size: 20px;
+
+body {
+  font-family: "Helvetica Neue", "Helvetica Neue Light", Helvetica, Arial, "Lucida Grande", sans-serif; 
+  margin: 0 auto;
+}
+* {
+	font-weight: $default-weight;
+}
+
+.button {
+	width: 100%;
+}
+
+.default-weight {
+	font-weight: $default-weight;
+}
+.proteus {
+	font-size: $header-font-size;
+	font-weight: $default-weight;
+	color: lightblue;
+}
+.h4 {
+	color: $h4-color;
+	font-weight: 400;
+	margin-left: 100px;
+    font-size: $box-font-size;
+    color: $grey-font;
+
+}
+
+.box {
+	color: $h4-color;
+    text-align: center;
+    float: none;
+    display: block;
+    margin: 0 auto;
+    margin-top: 110px;
+    line-height: $line-height;
+}
+
+label {
+	margin: 0;
+}
+
+.input-height {
+	border-radius: 5px;
+	height: $input-height;
+	width: 100%;
+	font-weight: $default-weight;
+}
+
+.weight {
+	font-weight: 800;
+}
+
+.select-text {
+	font-size: 20px;
+	margin-bottom: 15px;
+}
+
+.input-group .form-control:last-child {
+	border-radius: $border-radius;
+}
+.input-group .form-control:not(:first-child):not(:last-child) {
+	border-radius: $border-radius;
+}
+
+.grey-font {
+	color: $grey-font;
+	font-size: $box-font-size;
+	margin-top: -10px;
+	font-weight: $default-weight;
+}
+
+.choose-text {
+	text-align: left;
+	font-style: italic;
+	font-size: 11px;
+}
+
+.divider{
+    width:20px;
+    height:auto;
+    display:inline-block;
+}
+
+.down-drop-button {
+	width: 5px;
+	border-radius: 0 5px 5px 0;
+}
+
+.btn-group>.btn-group:not(:first-child):not(:last-child)>.btn {
+	border-radius: 0 5px 5px 0;
+}
+
+.caret {
+	position: relative;
+    right: 5px;
+}
+
+button.btn.btn-primary.default-weight.run-button {
+	width: 137px; 
+	margin-left: 37px; 
+	border-radius: 5px;
+} 
+
+.btn-group>.btn:not(:first-child):not(:last-child):not(.dropdown-toggle) {
+	border-radius: 5px 0px 0px 5px;
+}
+
+button.go {
+	font-size: 11px; height: 34px; width: 132px; border-radius: 5px 0 0 5px;
+}
+
+
+
+
+
+
