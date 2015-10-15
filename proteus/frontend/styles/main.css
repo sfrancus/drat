@@ -120,6 +120,9 @@ input[readonly] {
   background-color: white !important;
   cursor: text !important; }
 
+.folder-icon {
+  margin-right: 10px; }
+
 @media screen and (max-width: 480px) {
   button.btn.btn-primary.default-weight.run-button {
     width: 100%;
