@@ -123,6 +123,9 @@ input[readonly] {
 .folder-icon {
   margin-right: 10px; }
 
+#file-name {
+  text-align: left; }
+
 @media screen and (max-width: 480px) {
   button.btn.btn-primary.default-weight.run-button {
     width: 100%;

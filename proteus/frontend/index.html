@@ -15,7 +15,7 @@
     </div>
 
       <div class="col-md-5 box">
-          <form role="form">
+          <form role="form" >
               <div class="col-lg-10 col-lg-offset-0">
                 <div class="input-group">
                       <div class="select-text">Select a repository to audit with <span class="weight">DRAT</span></div>
@@ -24,8 +24,14 @@
                        
                       <span class="file-input btn btn-block btn-info btn-file default-weight input-height">
                           <span class="glyphicon glyphicon-folder-open folder-icon"></span>
-                          Choose a directory from your computer <input type="file" multiple>
+                          Choose a directory from your computer
+                          <input type="file" id="files" name="attachment[]" multiple />
+                          <output id="list"></output>
                       </span>
+                      <div class="name" id="file-name">
+                        
+                      </div>
+
                 </div>
                 <div class="btn-group" style="margin-top: 30px; width: 100%; ">
                     <div class="choose-text">Choose a command to run</div>
@@ -41,6 +47,7 @@
                         data-toggle="dropdown">    
                         <span class="caret"></span>
                       </button>
+
                     </div>
 
                     <button type="button" class="btn btn-primary default-weight run-button">Run DRAT! </button>
@@ -55,6 +62,11 @@
 <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 <script src="js/main.js"></script>
-
+<script type="text/javascript">
+  $("input[name='attachment[]']").change(function() {
+    var fileName = $(this).val();
+    $("#file-name").append(fileName + "<span style='float:right;'>x</span>");
+  });
+</script>
 </body>
 </html>
