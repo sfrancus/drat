@@ -9,14 +9,22 @@ import java.io.InputStreamReader;
  */
 public class GenericProcess {
     private final String path;
+    private String command;
+    private static DratData dratData;
     public GenericProcess(String path) {
+
         this.path = path;
+
     }
     public void createProcess(String command) throws IOException {
         ProcessBuilder builder = new ProcessBuilder(this.path, command);
         spawnProcess(builder);
     }
+    public void createData(String path){
+        dratData = new DratData(path);
+    }
     public void createProcess(String command, String canonicalPath) throws IOException {
+        this.command = command;
         ProcessBuilder builder = new ProcessBuilder(this.path, command, canonicalPath);
         spawnProcess(builder);
     }
@@ -28,6 +36,7 @@ public class GenericProcess {
         BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
         while (true) {
             line = reader.readLine();
+            dratData.readData(command,line);
             if (line == null) {
                 break;
             }

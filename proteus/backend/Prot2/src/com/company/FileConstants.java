@@ -14,9 +14,9 @@ public class FileConstants {
     public static final String DRAT_SRC = buildDratSubdirectoryPath("/src");
 
     private static String getDratDirectory() {
-        final File CURRENT_CLASS = new File(DratWrapper.class.getProtectionDomain().getCodeSource().getLocation().getPath());
+        final File CURRENT_CLASS = new File(FileConstants.class.getProtectionDomain().getCodeSource().getLocation().getPath());
         String classPath = CURRENT_CLASS.getAbsolutePath();
-        return classPath.substring(0, classPath.lastIndexOf(DRAT)+1);
+        return classPath.substring(0, classPath.lastIndexOf(DRAT)+DRAT.length());
     }
 
     public static String buildDratSubdirectoryPath(String additionalPath) {

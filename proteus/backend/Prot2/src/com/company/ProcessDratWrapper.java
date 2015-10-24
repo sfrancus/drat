@@ -10,10 +10,11 @@ import java.io.InputStreamReader;
  */
 public class ProcessDratWrapper extends GenericProcess implements AbstractDratWrapper {
     private static final String DRAT = FileConstants.DRAT_PATH;
-    private String path;
+    private String path = "/Users/junsuhlee/CSCI401/drat/src";
     private boolean isIndexedFlag = false;
     public ProcessDratWrapper() {
         super(DRAT);
+        super.createData(path);
     }
     public ProcessDratWrapper(String canonicalPath) {
         this();
@@ -27,7 +28,7 @@ public class ProcessDratWrapper extends GenericProcess implements AbstractDratWr
         return this.path;
     }
     public void crawl() throws IOException, DratWrapperException {
-        if(!isIndexedFlag) {
+        if(isIndexedFlag) {
             throw new DratWrapperException();
         }
         super.createProcess("crawl", this.path);
