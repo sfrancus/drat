@@ -3,10 +3,12 @@ $list-background: #E8E8E8;
 $list-header-background: #F8F8F8;
 $fontweight-800: 800;
 $fontweight-600: 600;
+$section-default-fong-weight: 100;
 
 .sections {
   margin-top: 70px;
   color: #4C4C4C;
+  font-weight: $section-default-fong-weight;
 }
 .list-header{
   border: none;
@@ -60,4 +62,29 @@ $fontweight-600: 600;
 
 .progress {
   margin-top: 20px;
+}
+
+.index-value {
+  font-size: 15px;
+  margin-top: -15px;
+}
+
+.pie-chart {
+  margin-top: 10px;
+}
+
+.stats-area {
+  margin-top: 20px;
+}
+
+.stat-subheader {
+  margin-left: 10px;
+  font-weight: $fontweight-600;
+}
+
+.right {
+  padding-left: 100px;
+}
+.right-s {
+  padding-left: 20px;
 }

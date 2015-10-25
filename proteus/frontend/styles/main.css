@@ -147,7 +147,8 @@ input[readonly] {
     width: 91.8%; } }
 .sections {
   margin-top: 70px;
-  color: #4C4C4C; }
+  color: #4C4C4C;
+  font-weight: 100; }
 
 .list-header {
   border: none;
@@ -191,5 +192,25 @@ input[readonly] {
 
 .progress {
   margin-top: 20px; }
+
+.index-value {
+  font-size: 15px;
+  margin-top: -15px; }
+
+.pie-chart {
+  margin-top: 10px; }
+
+.stats-area {
+  margin-top: 20px; }
+
+.stat-subheader {
+  margin-left: 10px;
+  font-weight: 600; }
+
+.right {
+  padding-left: 100px; }
+
+.right-s {
+  padding-left: 20px; }
 
 /*# sourceMappingURL=main.css.map */

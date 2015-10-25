@@ -6,6 +6,7 @@
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="styles/main.css">
+	<link rel="stylesheet" href="https://rawgit.com/novus/nvd3/v1.1.15-beta/nv.d3.min.css"/>
 </head>
 <body>
 	<div class="container">
@@ -50,8 +51,56 @@
 					<div class="mid-header-box">
 							<h1> Please wait while <span class="fontweight-600">DRAT</span> scans your repository...</h1>
 							<uib-progressbar max="max" value="dynamic" type="info"><span style="color:white; white-space:nowrap;"></span></uib-progressbar>
+							<div class="index-value">
+								<span class="fontweight-600">{{ value }}%</span> is completed on step: <span class="fontweight-600"> Indexing </span>
+							</div>
+					</div>
+
+					<div class="stats-area">
+						<div class="sub-header">
+							<h4 lass="fontweight-600"> <span class="glyphicon glyphicon-folder-open"> </span> <span class="stat-subheader">Repository Statistics</span></h4>
+						</div>
+						<div class="num-stats">
+							<table>
+								<tr>
+									<td>
+										<div class="in-memory-size">
+											<table>
+												<tr>
+													<td class="left fontweight-600"> In-Memory Size </td>
+													<td class="right"> {{ memorySize |  number : fractionSize }} KB</td>
+												</tr>
+											</table>
+										</div>
+									</td>
+									<td class="right-s">
+										<div class="number-of-files">
+											<table>
+												<tr>
+													<td class="left fontweight-600"> Number of files </td>
+													<td class="right"> {{ memorySize |  number : fractionSize }}</td>
+												</tr>
+											</table>
+										</div>
+									</td>
+								</tr>
+							</table>
+							</div>
+						<div class="pie-chart col-lg-6">
+								<!-- the tag below shows the pie-chart -->
+								<div class="fontweight-600">In-Memory Size </div>
+						  	<nvd3 options="options" data="data"></nvd3>
+						</div>
+						<div class="bars col-lg-6">
+								<!-- the tag below shows the pie-chart -->
+								<div class="fontweight-600">License Types Breakdowns </div>
+								 <nvd3 options="chartOptions" data="chartData"></nvd3>
+						</div>
 					</div>
 				</div>
+
+
+				<!-- Section for the DRAT statistics. (left-section) -->
 				<div class="col-lg-3">
 					<h5>Bar Chart Example <small>With custom colors.</small></h5>
 				</div>
@@ -65,6 +114,9 @@
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
 <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-animate.js"></script>
 <script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.14.3.js"></script>
+<script src="https://rawgit.com/mbostock/d3/master/d3.min.js"></script>
+<script src="https://rawgit.com/novus/nvd3/v1.1.15-beta/nv.d3.min.js"></script>
+<script src="https://rawgit.com/krispo/angular-nvd3/v0.1.1/dist/angular-nvd3.js"></script>
 <script src="js/main.js"></script>
 
 </body>
