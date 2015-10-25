@@ -148,17 +148,34 @@ input[readonly] {
 .sections {
   margin-top: 70px; }
 
-.scanned-list li:first-child {
+.list-header {
   border: none;
-  background: #F8F8F8; }
+  background: #F8F8F8;
+  font-weight: 800;
+  padding: 10px; }
 
-.scanned-list li:not(:first-child) {
+.scanned-list li {
   font-size: 11px;
   height: 25px;
   line-height: 0.5;
-  border-bottom: 1px solid #ddd; }
+  border-right: none;
+  border-left: none;
+  border-bottom: 1px solid #E8E8E8; }
 
-.scanned-list li:not(:first-child):nth-child(odd) {
+.scanned-list li:nth-child(odd) {
   background: #E8E8E8; }
+
+.list-box {
+  height: 400px;
+  overflow-y: auto; }
+
+#icon {
+  font-size: 22px;
+  margin-right: 10px; }
+
+.sub-header {
+  position: relative;
+  top: -2px;
+  font-weight: 800; }
 
 /*# sourceMappingURL=main.css.map */

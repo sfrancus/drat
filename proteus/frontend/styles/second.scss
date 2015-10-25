@@ -1,18 +1,43 @@
+$font-weight: 800;
+$list-background: #E8E8E8;
+$list-header-background: #F8F8F8;
+
 .sections {
   margin-top: 70px;
 }
-.scanned-list li:first-child{
+.list-header{
   border: none;
-  background: #F8F8F8 ;
+  background: $list-header-background;
+  font-weight: $font-weight;
+  padding: 10px;
 }
 
-.scanned-list li:not(:first-child) {
+
+.scanned-list li {
     font-size: 11px;
     height: 25px;
     line-height: 0.5;
-    border-bottom: 1px solid #ddd;
+    border-right: none;
+    border-left: none;
+    border-bottom: 1px solid $list-background;
 }
 
-.scanned-list li:not(:first-child):nth-child(odd) {
-  background: #E8E8E8;
+.scanned-list li:nth-child(odd) {
+  background: $list-background;
+}
+
+.list-box {
+    height: 400px;
+    overflow-y: auto;
+}
+
+#icon {
+  font-size: 22px;
+  margin-right: 10px;
+}
+
+.sub-header {
+  position: relative;
+  top: -2px;
+  font-weight: $font-weight;
 }
