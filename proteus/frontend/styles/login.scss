@@ -9,7 +9,7 @@ $input-height: 40px;
 $box-font-size: 20px;
 
 body {
-  font-family: "Helvetica Neue", "Helvetica Neue Light", Helvetica, Arial, "Lucida Grande", sans-serif; 
+  font-family: "Helvetica Neue", "Helvetica Neue Light", Helvetica, Arial, "Lucida Grande", sans-serif;
   margin: 0 auto;
 }
 * {
@@ -108,10 +108,10 @@ label {
 }
 
 button.btn.btn-primary.default-weight.run-button {
-	width: 137px; 
-	margin-left: 37px; 
+	width: 137px;
+	margin-left: 37px;
 	border-radius: 5px;
-} 
+}
 
 .btn-group>.btn:not(:first-child):not(:last-child):not(.dropdown-toggle) {
 	border-radius: 5px 0px 0px 5px;
@@ -165,6 +165,3 @@ input[readonly] {
 	color: $h4-color;
 	text-decoration: none;
 }
-
-
-

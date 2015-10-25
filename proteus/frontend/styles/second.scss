@@ -1,0 +1,18 @@
+.sections {
+  margin-top: 70px;
+}
+.scanned-list li:first-child{
+  border: none;
+  background: #F8F8F8 ;
+}
+
+.scanned-list li:not(:first-child) {
+    font-size: 11px;
+    height: 25px;
+    line-height: 0.5;
+    border-bottom: 1px solid #ddd;
+}
+
+.scanned-list li:not(:first-child):nth-child(odd) {
+  background: #E8E8E8;
+}
