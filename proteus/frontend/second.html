@@ -14,7 +14,7 @@
       <span class="h4">'A GUI FOR DRAT'</span>
     </div>
 
-      <div class="row sections">
+      <div class="row sections" ng-controller="switch">
 				<div class="col-lg-3">
 					<div class = "list-header"><span class="glyphicon glyphicon-folder-close" id="icon"></span> <span class="sub-header">Files Recently Scanned</span></div>
 					<div class="list-box">
@@ -47,7 +47,10 @@
 						</ul>
 				</div>
 				<div class="col-lg-6">
-					<h5>Bar Chart Example <small>With custom colors.</small></h5>
+					<div class="mid-header-box">
+							<h1> Please wait while <span class="fontweight-600">DRAT</span> scans your repository...</h1>
+							<uib-progressbar max="max" value="dynamic" type="info"><span style="color:white; white-space:nowrap;"></span></uib-progressbar>
+					</div>
 				</div>
 				<div class="col-lg-3">
 					<h5>Bar Chart Example <small>With custom colors.</small></h5>
@@ -60,6 +63,8 @@
 <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-animate.js"></script>
+<script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.14.3.js"></script>
 <script src="js/main.js"></script>
 
 </body>

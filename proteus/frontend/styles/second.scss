@@ -1,9 +1,12 @@
 $font-weight: 800;
 $list-background: #E8E8E8;
 $list-header-background: #F8F8F8;
+$fontweight-800: 800;
+$fontweight-600: 600;
 
 .sections {
   margin-top: 70px;
+  color: #4C4C4C;
 }
 .list-header{
   border: none;
@@ -40,4 +43,21 @@ $list-header-background: #F8F8F8;
   position: relative;
   top: -2px;
   font-weight: $font-weight;
+}
+
+.mid-header-box h1 {
+  font-weight: 100;
+  margin:0;
+}
+
+.fontweight-800 {
+  font-weight: $fontweight-800;
+}
+
+.fontweight-600 {
+  font-weight: 600;
+}
+
+.progress {
+  margin-top: 20px;
 }

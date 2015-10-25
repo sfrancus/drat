@@ -146,7 +146,8 @@ input[readonly] {
     height: 34px;
     width: 91.8%; } }
 .sections {
-  margin-top: 70px; }
+  margin-top: 70px;
+  color: #4C4C4C; }
 
 .list-header {
   border: none;
@@ -177,5 +178,18 @@ input[readonly] {
   position: relative;
   top: -2px;
   font-weight: 800; }
+
+.mid-header-box h1 {
+  font-weight: 100;
+  margin: 0; }
+
+.fontweight-800 {
+  font-weight: 800; }
+
+.fontweight-600 {
+  font-weight: 600; }
+
+.progress {
+  margin-top: 20px; }
 
 /*# sourceMappingURL=main.css.map */
