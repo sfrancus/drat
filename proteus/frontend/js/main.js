@@ -58,7 +58,7 @@ angular
                 margin : {
                     top: 5,
                     right: 0,
-                    bottom: 0,
+                    bottom: 15,
                     left: 0
                 },
                 x: function(d){return d.label;},
