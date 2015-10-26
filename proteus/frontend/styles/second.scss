@@ -103,12 +103,31 @@ $section-default-fong-weight: 100;
   .stats-right-section {
     margin-top: 20px;
   }
+
+  td {
+    clear: both;
+    display:block;
+  }
+
+  .rep-stats-table {
+    width: 100%;
+
+    td:last-child {
+      width: 50%;
+      margin: 0;
+      float: right;
+      margin-top: -20px;
+    }
+  }
+
 }
 
 .table-responsive
 {
     overflow-x: auto;
 }
+
+
 
 .drat-stats-list {
   list-style-type: none;
