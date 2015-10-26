@@ -1,5 +1,5 @@
 angular
-  .module('drat', ['ngAnimate', 'ui.bootstrap', 'nvd3'])
+  .module('drat', ['ngAnimate', 'ui.bootstrap', 'nvd3', 'nvd3ChartDirectives'])
   .controller('switch', ['$scope', function($scope){
       $scope.goToTwo = function() {
         console.log("goes");
@@ -14,16 +14,28 @@ angular
       $scope.generateProgress();
 
 
+      var colorArray = ['#FFAD5C', '#4093E6', '#FF7373', '#58C658', '#33ADD6', '#B56C6C', '#B8B800'];
+        $scope.colorFunction = function() {
+        	return function(d, i) {
+            	return colorArray[i];
+            };
+      }
 
       $scope.options = {
           chart: {
               type: 'pieChart',
-              height: 250,
+              height: 280,
               x: function(d){return d.key;},
               y: function(d){return d.y;},
               showLabels: true,
               transitionDuration: 500,
               labelThreshold: 0.05,
+              donut: true,
+              donutRatio: 0.30,
+              showLabels: true,
+              color: $scope.colorFunction(),
+              labelType: "percent2digits",
+              donutLabelsOutside: true,
               legend: {
                   margin: {
                       top: 5,
@@ -36,20 +48,30 @@ angular
       };
 
       $scope.data = [
-          {
-              key: "csv",
-              y: 72.5
-          },
-          {
-              key: "json",
-              y: 12
-          },
-          {
-              key: "text",
-              y: 17.5
-          }
-      ];
+         {
+             key: "csv",
+             y: 72.5
+         },
+         {
+             key: "json",
+             y: 12
+         },
+         {
+             key: "text",
+             y: 17.5
+         }
+     ];
 
+       $scope.xFunction = function(){
+          return function(d) {
+              return d.key;
+          };
+        }
+      $scope.yFunction = function(){
+        	return function(d){
+        		return d.y;
+        	};
+      }
 
       $scope.chartOptions = {
             chart: {
@@ -61,11 +83,13 @@ angular
                     bottom: 15,
                     left: 0
                 },
+                //xAxisTickFormat: $scope.yAxisFormatFunction(),
                 x: function(d){return d.label;},
                 y: function(d){return d.value;},
+                color: $scope.colorFunction(),
                 showValues: true,
                 valueFormat: function(d){
-                    return d3.format(',.1f')(d);
+                    return d3.format('.2f')(d) + '%';
                 },
                 transitionDuration: 500,
                 xAxis: {

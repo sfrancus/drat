@@ -75,7 +75,7 @@
 									</td>
 									<td class="right-s">
 										<div class="number-of-files">
-											<table class="rep-stats-table"> 
+											<table class="rep-stats-table">
 												<tr>
 													<td class="left fontweight-600"> Number of files </td>
 													<td class="right"> {{ memorySize |  number : fractionSize }}</td>
@@ -87,9 +87,20 @@
 							</table>
 							</div>
 						<div class="pie-chart col-lg-6">
+
 								<!-- the tag below shows the pie-chart -->
 								<div class="fontweight-600">MIME Types Breakdown </div>
-						  	<nvd3 options="options" data="data"></nvd3>
+								<div ng-controller="switch" style="margih-right: 50px;">
+									<nvd3
+							    	data="data"
+							        id="donutLabelsOutsideExample"
+							      	options="options"
+
+										>
+
+							    </nvd3>
+								</div>
+								<!-- <nvd3 options="options" data="data"></nvd3> -->
 						</div>
 						<div class="bars col-lg-6">
 								<!-- the tag below shows the pie-chart -->
@@ -124,8 +135,9 @@
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
 <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-animate.js"></script>
 <script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.14.3.js"></script>
+<script src="bower_components/angularjs-nvd3-directives/dist/angularjs-nvd3-directives.js"></script>
 <script src="https://rawgit.com/mbostock/d3/master/d3.min.js"></script>
-<script src="https://rawgit.com/novus/nvd3/v1.1.15-beta/nv.d3.min.js"></script>
+<script src="bower_components/nvd3/nv.d3.js"></script>
 <script src="https://rawgit.com/krispo/angular-nvd3/v0.1.1/dist/angular-nvd3.js"></script>
 <script src="js/main.js"></script>
 
