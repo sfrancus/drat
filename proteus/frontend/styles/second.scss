@@ -32,7 +32,7 @@ $section-default-fong-weight: 100;
 }
 
 .list-box {
-    height: 400px;
+    height: 465px;
     overflow-y: auto;
 }
 
@@ -71,6 +71,7 @@ $section-default-fong-weight: 100;
 
 .pie-chart {
   margin-top: 10px;
+  margin-left: -15px;
 }
 
 .stats-area {
@@ -87,4 +88,35 @@ $section-default-fong-weight: 100;
 }
 .right-s {
   padding-left: 20px;
+}
+
+.bars {
+  margin-left: 15px;
+  margin-top: 11px;
+}
+
+@media screen and (max-width: 1200px) {
+	.bars {
+		margin-left: -15px;
+	}
+
+  .stats-right-section {
+    margin-top: 20px;
+  }
+}
+
+.table-responsive
+{
+    overflow-x: auto;
+}
+
+.drat-stats-list {
+  list-style-type: none;
+  font-size: 19px;
+  padding-left: 10px;
+  margin-top: 5px;
+
+  li {
+    padding: 4.5px;
+  }
 }

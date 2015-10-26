@@ -168,7 +168,7 @@ input[readonly] {
   background: #E8E8E8; }
 
 .list-box {
-  height: 400px;
+  height: 465px;
   overflow-y: auto; }
 
 #icon {
@@ -198,7 +198,8 @@ input[readonly] {
   margin-top: -15px; }
 
 .pie-chart {
-  margin-top: 10px; }
+  margin-top: 10px;
+  margin-left: -15px; }
 
 .stats-area {
   margin-top: 20px; }
@@ -212,5 +213,26 @@ input[readonly] {
 
 .right-s {
   padding-left: 20px; }
+
+.bars {
+  margin-left: 15px;
+  margin-top: 11px; }
+
+@media screen and (max-width: 1200px) {
+  .bars {
+    margin-left: -15px; }
+
+  .stats-right-section {
+    margin-top: 20px; } }
+.table-responsive {
+  overflow-x: auto; }
+
+.drat-stats-list {
+  list-style-type: none;
+  font-size: 19px;
+  padding-left: 10px;
+  margin-top: 5px; }
+  .drat-stats-list li {
+    padding: 4.5px; }
 
 /*# sourceMappingURL=main.css.map */

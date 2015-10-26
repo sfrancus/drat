@@ -23,7 +23,7 @@ angular
               y: function(d){return d.y;},
               showLabels: true,
               transitionDuration: 500,
-              labelThreshold: 0.01,
+              labelThreshold: 0.05,
               legend: {
                   margin: {
                       top: 5,
@@ -56,9 +56,9 @@ angular
                 type: 'discreteBarChart',
                 height: 250,
                 margin : {
-                    top: 20,
+                    top: 5,
                     right: 0,
-                    bottom: 15,
+                    bottom: 0,
                     left: 0
                 },
                 x: function(d){return d.label;},
@@ -103,5 +103,8 @@ angular
         ]
 
         $scope.memorySize = 42641;
+        $scope.numOfRatRunning = 45;
+        $scope.numORatFinished = 24;
+        $scope.numOfRatfailed = 21;
 
   }])

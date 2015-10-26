@@ -15,7 +15,7 @@
       <span class="h4">'A GUI FOR DRAT'</span>
     </div>
 
-      <div class="row sections" ng-controller="switch">
+      <div class="row sections" ng-controller="switch" ng-cloak>
 				<div class="col-lg-3">
 					<div class = "list-header"><span class="glyphicon glyphicon-folder-close" id="icon"></span> <span class="sub-header">Files Recently Scanned</span></div>
 					<div class="list-box">
@@ -60,8 +60,8 @@
 						<div class="sub-header">
 							<h4 lass="fontweight-600"> <span class="glyphicon glyphicon-folder-open"> </span> <span class="stat-subheader">Repository Statistics</span></h4>
 						</div>
-						<div class="num-stats">
-							<table>
+						<div class="table-responsive num-stats">
+							<table class="table">
 								<tr>
 									<td>
 										<div class="in-memory-size">
@@ -88,7 +88,7 @@
 							</div>
 						<div class="pie-chart col-lg-6">
 								<!-- the tag below shows the pie-chart -->
-								<div class="fontweight-600">In-Memory Size </div>
+								<div class="fontweight-600">MIME Types Breakdown </div>
 						  	<nvd3 options="options" data="data"></nvd3>
 						</div>
 						<div class="bars col-lg-6">
@@ -101,8 +101,18 @@
 
 
 				<!-- Section for the DRAT statistics. (left-section) -->
-				<div class="col-lg-3">
-					<h5>Bar Chart Example <small>With custom colors.</small></h5>
+				<div class="col-lg-3 stats-right-section">
+					<div class="drat-stats">
+							<div class = "list-header">
+								<span class="glyphicon glyphicon-stats" id="icon"></span>
+								<span class="sub-header">DRAT Statistics</span>
+							</div>
+							<ul class="drat-stats-list">
+								<li><span class="fontweight-600">{{numOfRatRunning}}</span> RAT Instances <span class="fontweight-600">running</span> </li>
+								<li><span class="fontweight-600">{{numORatFinished}}</span> RAT Instances <span class="fontweight-600">finished</span> </li>
+								<li><span class="fontweight-600">{{numOfRatfailed}}</span> RAT Instances <span class="fontweight-600">failed</span> </li>
+							</ul>
+					</div>
 				</div>
       </div>
   </div>
