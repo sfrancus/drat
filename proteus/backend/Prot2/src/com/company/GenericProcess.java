@@ -28,7 +28,7 @@ public class GenericProcess {
         ProcessBuilder builder = new ProcessBuilder(this.path, command, canonicalPath);
         spawnProcess(builder);
     }
-    private void spawnProcess(ProcessBuilder builder) throws IOException {
+    private boolean spawnProcess(ProcessBuilder builder) throws IOException {
         String line;
         builder.environment().putAll(Utils.getEnvironment());
         builder.redirectErrorStream(true);
@@ -42,5 +42,7 @@ public class GenericProcess {
             }
             System.out.println(line);
         }
+
+        return true;
     }
 }

@@ -23,10 +23,12 @@ public class Start {
             e.printStackTrace();
         }
     }
-    public static void restartOodt() throws IOException {
+    public static boolean restartOodt() throws IOException {
         oodtWrapper.stop();
         oodtWrapper.reset();
         oodtWrapper.run();
+
+        return true;
     }
     public static void restartDrat() throws Exception {
         dratWrapper.crawl();

@@ -1,6 +1,7 @@
 package com.company;
 
 import java.io.File;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 /**
@@ -9,8 +10,17 @@ import java.util.ArrayList;
 public class DratData {
     private int numFileIngested = 0;
     private int numTotalFile = 0;
-    private ArrayList<String> nameFileIndexed = new ArrayList<String>();
+    private ArrayList<String> nameFileIngested = new ArrayList<String>();
+    final int numFileRecentlyIngested = 10;
+
     private boolean crawlDone = false;
+
+    private boolean indexDone = false;
+    private int numFileIndexed = 0;
+
+    private boolean mapDone = false;
+
+    private boolean reduceDone = false;
 
     public DratData(String path){
         countFileNumber(path);
@@ -35,14 +45,50 @@ public class DratData {
             if (data.startsWith("INFO: Successfully ingested product:")) {
                 String[] split = data.split(":");
 
-                nameFileIndexed.add(split[3]);
+                nameFileIngested.add(split[3]);
                 numFileIngested++;
 
             }
             if (data.startsWith("INFO: Indexing products...")) {
                 crawlDone = true;
             }
+            if (data.startsWith("INFO: Finished indexing products")) {
+                indexDone = true;
+            }
+
+            if (indexDone && !mapDone && data.startsWith("Navigate to")){
+                mapDone = true;
+            }
+
+            if (mapDone && data.startsWith("Navigate to")){
+                reduceDone = true;
+            }
+            if (data.startsWith("INFO: Indexed product:")){
+                numFileIndexed++;
+            }
+
         }
+    }
+    public ArrayList<String> getFilesRecentlyIngested(){
+        if(nameFileIngested.size() > numFileRecentlyIngested){
+
+            return new ArrayList<String>(nameFileIngested.subList(nameFileIngested.size() - 11, nameFileIngested.size() - 1));
+        }
+
+        return nameFileIngested;
+
+    }
+    public String currentPhase(){
+        if(!crawlDone){
+            return "crawling";
+        }else if(!indexDone){
+            return "indexing";
+        }else if(!mapDone){
+            return "mapping";
+        }else if(!reduceDone){
+            return "reducing";
+        }
+        return "finished";
     }
 
 }
