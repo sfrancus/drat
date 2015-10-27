@@ -17,47 +17,48 @@
 
       <div class="row sections" ng-controller="switch" ng-cloak>
 
-				<!-- ******* The left section is here ******* -->
-				<div id="left-section" class="col-lg-3">
-					<!-- List of scanned files start here -->
-					<div id="scanned-files" ng-include="'html/scannedfiles.html'">
-							<!-- List of scanned files are inside of here -->
-					</div>
-					<!-- List of scanned files end here -->
-
-					<!-- logs are here -->
-					<div class="logs list-header" ng-include="'html/logs.html'">
-							<!-- logs contents are here -->
-					</div>
-					<!-- logs ended above -->
+			<!-- ******* The left section is here ******* -->
+			<div id="left-section" class="col-lg-3">
+				<!-- List of scanned files start here -->
+				<div id="scanned-files" ng-include="'html/scannedfiles.html'">
+						<!-- List of scanned files are inside of here -->
 				</div>
-				<!-- ******* The left section ends here ******* -->
+				<!-- List of scanned files end here -->
 
-				<!-- ******* The middle section is here ******* -->
-				<div id="middle-section" class="col-lg-6">
-					<!-- progress bar area and header start here -->
-					<div class="mid-header-box" ng-include="'html/progressarea.html'">
-							<!-- progress bar area and header are inside of it -->
-					</div>
-					<!-- progress bar and header ends here -->
-
-					<!-- stats area -->
-					<div class="stats-area" ng-include="'html/statsarea.html'">
-							<!-- stats are inside of it -->
-					</div>
-					<!-- stats area ends -->
+				<!-- logs are here -->
+				<div class="logs list-header" ng-include="'html/logs.html'">
+						<!-- logs contents are here -->
 				</div>
-				<!-- ******* The middle section ends here ******* -->
+				<!-- logs ended above -->
+			</div>
+			<!-- ******* The left section ends here ******* -->
 
-
-				<!-- ******* Section for the DRAT statistics. (left-section) ******* -->
-				<div id="stats-right-section" class="col-lg-3" ng-include="'html/dratstats.html'">
-						<!-- Contents of the Drat stats are here... -->
+			<!-- ******* The middle section is here ******* -->
+			<div id="middle-section" class="col-lg-6">
+				<!-- progress bar area and header start here -->
+				<div class="mid-header-box" ng-include="'html/progressarea.html'">
+						<!-- progress bar area and header are inside of it -->
 				</div>
-					<!-- ******* Left-side section ends here... ******* -->
+				<!-- progress bar and header ends here -->
 
-			</div> <!-- sections div ends -->
-  </div> <!-- container div ends -->
+				<!-- stats area -->
+				<div class="stats-area" ng-include="'html/statsarea.html'">
+						<!-- stats are inside of it -->
+				</div>
+				<!-- stats area ends -->
+			</div>
+			<!-- ******* The middle section ends here ******* -->
+
+
+			<!-- ******* Section for the DRAT statistics. (left-section) ******* -->
+			<div id="stats-right-section" class="col-lg-3" ng-include="'html/dratstats.html'">
+					<!-- Contents of the Drat stats are here... -->
+			</div>
+				<!-- ******* Left-side section ends here... ******* -->
+
+		</div> <!-- .sections div ends -->
+
+  </div> <!-- .container div ends -->
 
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
