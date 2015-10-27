@@ -14,6 +14,59 @@ angular
       $scope.generateProgress();
 
 
+      // scanned list array
+      $scope.arrayOfScannedFiles = [
+        {
+           listId: 1,
+           listName: '/foo/bar/feeb/manife'
+        },
+        {
+          listId: 2,
+          listName: '/foo/src/bar/baz/bim'
+        },
+        {
+          listId: 3,
+          listName: '2/foo/bar/blob/dj.wow'
+        },
+        {
+          listId: 4,
+          listName: '/foo/bar/baz/src.txt'
+        },
+        {
+          listId: 5,
+          listName: '/foo/bar/feeb/manife'
+        },
+        {
+          listId: 6,
+          listName: '/foo/bar/baz/keke.ke'
+        },
+        {
+          listId: 7,
+          listName: '/foo/bar/baz/keke.ke'
+        },
+        {
+          listId: 8,
+          listName: '/foo/bar/baz/keke.ke'
+        },
+        {
+          listId: 8,
+          listName: '/foo/bar/baz/keke.ke'
+        },
+        {
+          listId: 8,
+          listName: '/foo/bar/baz/keke.ke'
+        },
+        {
+          listId: 8,
+          listName: '/foo/bar/baz/keke.ke'
+        },
+        {
+          listId: 8,
+          listName: '/foo/bar/baz/keke.ke'
+        }
+      ]
+
+
       var colorArray = ['#FFAD5C', '#4093E6', '#FF7373', '#58C658', '#33ADD6', '#B56C6C', '#B8B800'];
         $scope.colorFunction = function() {
         	return function(d, i) {
@@ -24,7 +77,7 @@ angular
       $scope.options = {
           chart: {
               type: 'pieChart',
-              height: 280,
+              height: 300,
               x: function(d){return d.key;},
               y: function(d){return d.y;},
               showLabels: true,

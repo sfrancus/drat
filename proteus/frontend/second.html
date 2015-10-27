@@ -20,30 +20,8 @@
 					<div class = "list-header"><span class="glyphicon glyphicon-folder-close" id="icon"></span> <span class="sub-header">Files Recently Scanned</span></div>
 					<div class="list-box">
 						<ul class = "list-group scanned-list">
-					   <li class = "list-group-item">/foo/bar/feeb/manife</li>
-					   <li class = "list-group-item">/foo/src/bar/baz/bim</li>
-					   <li class = "list-group-item">2/foo/bar/blob/dj.wow</li>
-					   <li class = "list-group-item">/foo/bar/baz/keke.ke</li>
-					   <li class = "list-group-item">/foo/bar/blob/sig.ou</li>
-						 <li class = "list-group-item">/foo/bar/baz/keke.ke</li>
-					   <li class = "list-group-item">/foo/bar/baz/barb.bb</li>
-					   <li class = "list-group-item">/foo/bar/baz/src.txt</li>
-						 <li class = "list-group-item">/foo/bar/feeb/manife</li>
-						 <li class = "list-group-item">/foo/src/bar/baz/bim</li>
-						 <li class = "list-group-item">2/foo/bar/blob/dj.wow</li>
-						 <li class = "list-group-item">/foo/bar/baz/keke.ke</li>
-						 <li class = "list-group-item">/foo/bar/blob/sig.ou</li>
-						 <li class = "list-group-item">/foo/bar/baz/keke.ke</li>
-						 <li class = "list-group-item">/foo/bar/baz/barb.bb</li>
-						 <li class = "list-group-item">/foo/bar/baz/src.txt</li>
-						 <li class = "list-group-item">/foo/bar/feeb/manife</li>
-						 <li class = "list-group-item">/foo/src/bar/baz/bim</li>
-						 <li class = "list-group-item">2/foo/bar/blob/dj.wow</li>
-						 <li class = "list-group-item">/foo/bar/baz/keke.ke</li>
-						 <li class = "list-group-item">/foo/bar/blob/sig.ou</li>
-						 <li class = "list-group-item">/foo/bar/baz/keke.ke</li>
-						 <li class = "list-group-item">/foo/bar/baz/barb.bb</li>
-						 <li class = "list-group-item">/foo/bar/baz/src.txt</li>
+					   <li class = "list-group-item" ng-repeat="files in arrayOfScannedFiles">{{files.listName}}</li>
+					   
 					</div>
 						</ul>
 				</div>
