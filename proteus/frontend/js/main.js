@@ -13,6 +13,8 @@ angular
       }
       $scope.generateProgress();
 
+      // this indicates which step the app is on
+      $scope.steps = ['Indexing', 'Finished'];
 
       // scanned list array
       $scope.arrayOfScannedFiles = [
@@ -49,23 +51,74 @@ angular
           listName: '/foo/bar/baz/keke.ke'
         },
         {
-          listId: 8,
+          listId: 9,
           listName: '/foo/bar/baz/keke.ke'
         },
         {
-          listId: 8,
+          listId: 10,
           listName: '/foo/bar/baz/keke.ke'
         },
         {
-          listId: 8,
+          listId: 11,
           listName: '/foo/bar/baz/keke.ke'
         },
         {
-          listId: 8,
+          listId: 12,
+          listName: '/foo/bar/baz/keke.ke'
+        },
+        {
+          listId: 10,
+          listName: '/foo/bar/baz/keke.ke'
+        },
+        {
+          listId: 11,
+          listName: '/foo/bar/baz/keke.ke'
+        },
+        {
+          listId: 12,
+          listName: '/foo/bar/baz/keke.ke'
+        },
+        {
+          listId: 10,
+          listName: '/foo/bar/baz/keke.ke'
+        },
+        {
+          listId: 11,
+          listName: '/foo/bar/baz/keke.ke'
+        },
+        {
+          listId: 12,
+          listName: '/foo/bar/baz/keke.ke'
+        },
+        {
+          listId: 10,
+          listName: '/foo/bar/baz/keke.ke'
+        },
+        {
+          listId: 11,
+          listName: '/foo/bar/baz/keke.ke'
+        },
+        {
+          listId: 12,
+          listName: '/foo/bar/baz/keke.ke'
+        },
+        {
+          listId: 10,
+          listName: '/foo/bar/baz/keke.ke'
+        },
+        {
+          listId: 11,
+          listName: '/foo/bar/baz/keke.ke'
+        },
+        {
+          listId: 12,
           listName: '/foo/bar/baz/keke.ke'
         }
       ]
 
+
+      // this will return true once the log is available
+      $scope.readOrNot = true;
 
       var colorArray = ['#FFAD5C', '#4093E6', '#FF7373', '#58C658', '#33ADD6', '#B56C6C', '#B8B800'];
         $scope.colorFunction = function() {

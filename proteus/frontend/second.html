@@ -16,96 +16,48 @@
     </div>
 
       <div class="row sections" ng-controller="switch" ng-cloak>
-				<div class="col-lg-3">
-					<div class = "list-header"><span class="glyphicon glyphicon-folder-close" id="icon"></span> <span class="sub-header">Files Recently Scanned</span></div>
-					<div class="list-box">
-						<ul class = "list-group scanned-list">
-					   <li class = "list-group-item" ng-repeat="files in arrayOfScannedFiles">{{files.listName}}</li>
-					   
+
+				<!-- ******* The left section is here ******* -->
+				<div id="left-section" class="col-lg-3">
+					<!-- List of scanned files start here -->
+					<div id="scanned-files" ng-include="'html/scannedfiles.html'">
+							<!-- List of scanned files are inside of here -->
 					</div>
-						</ul>
+					<!-- List of scanned files end here -->
+
+					<!-- logs are here -->
+					<div class="logs list-header" ng-include="'html/logs.html'">
+							<!-- logs contents are here -->
+					</div>
+					<!-- logs ended above -->
 				</div>
-				<div class="col-lg-6">
-					<div class="mid-header-box">
-							<h1> Please wait while <span class="fontweight-600">DRAT</span> scans your repository...</h1>
-							<uib-progressbar max="max" value="dynamic" type="info"><span style="color:white; white-space:nowrap;"></span></uib-progressbar>
-							<div class="index-value">
-								<span class="fontweight-600">{{ value }}%</span> is completed on step: <span class="fontweight-600"> Indexing </span>
-							</div>
+				<!-- ******* The left section ends here ******* -->
+
+				<!-- ******* The middle section is here ******* -->
+				<div id="middle-section" class="col-lg-6">
+					<!-- progress bar area and header start here -->
+					<div class="mid-header-box" ng-include="'html/progressarea.html'">
+							<!-- progress bar area and header are inside of it -->
 					</div>
+					<!-- progress bar and header ends here -->
 
-					<div class="stats-area">
-						<div class="sub-header">
-							<h4 lass="fontweight-600"> <span class="glyphicon glyphicon-folder-open"> </span> <span class="stat-subheader">Repository Statistics</span></h4>
-						</div>
-						<div class="table-responsive num-stats">
-							<table class="table">
-								<tr>
-									<td>
-										<div class="in-memory-size">
-											<table class="rep-stats-table">
-												<tr>
-													<td class="left fontweight-600"> In-Memory Size </td>
-													<td class="right"> {{ memorySize |  number : fractionSize }} KB</td>
-												</tr>
-											</table>
-										</div>
-									</td>
-									<td class="right-s">
-										<div class="number-of-files">
-											<table class="rep-stats-table">
-												<tr>
-													<td class="left fontweight-600"> Number of files </td>
-													<td class="right"> {{ memorySize |  number : fractionSize }}</td>
-												</tr>
-											</table>
-										</div>
-									</td>
-								</tr>
-							</table>
-							</div>
-						<div class="pie-chart col-lg-6">
-
-								<!-- the tag below shows the pie-chart -->
-								<div class="fontweight-600">MIME Types Breakdown </div>
-								<div ng-controller="switch" style="margih-right: 50px;">
-									<nvd3
-							    	data="data"
-							        id="donutLabelsOutsideExample"
-							      	options="options"
-
-										>
-
-							    </nvd3>
-								</div>
-								<!-- <nvd3 options="options" data="data"></nvd3> -->
-						</div>
-						<div class="bars col-lg-6">
-								<!-- the tag below shows the pie-chart -->
-								<div class="fontweight-600">License Types Breakdowns </div>
-								 <nvd3 options="chartOptions" data="chartData"></nvd3>
-						</div>
+					<!-- stats area -->
+					<div class="stats-area" ng-include="'html/statsarea.html'">
+							<!-- stats are inside of it -->
 					</div>
+					<!-- stats area ends -->
 				</div>
+				<!-- ******* The middle section ends here ******* -->
 
 
-				<!-- Section for the DRAT statistics. (left-section) -->
-				<div class="col-lg-3 stats-right-section">
-					<div class="drat-stats">
-							<div class = "list-header">
-								<span class="glyphicon glyphicon-stats" id="icon"></span>
-								<span class="sub-header">DRAT Statistics</span>
-							</div>
-							<ul class="drat-stats-list">
-								<li><span class="fontweight-600">{{numOfRatRunning}}</span> RAT Instances <span class="fontweight-600">running</span> </li>
-								<li><span class="fontweight-600">{{numORatFinished}}</span> RAT Instances <span class="fontweight-600">finished</span> </li>
-								<li><span class="fontweight-600">{{numOfRatfailed}}</span> RAT Instances <span class="fontweight-600">failed</span> </li>
-							</ul>
-					</div>
+				<!-- ******* Section for the DRAT statistics. (left-section) ******* -->
+				<div id="stats-right-section" class="col-lg-3" ng-include="'html/dratstats.html'">
+						<!-- Contents of the Drat stats are here... -->
 				</div>
-      </div>
-  </div>
+					<!-- ******* Left-side section ends here... ******* -->
 
+			</div> <!-- sections div ends -->
+  </div> <!-- container div ends -->
 
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>

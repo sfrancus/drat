@@ -3,7 +3,12 @@ $list-background: #E8E8E8;
 $list-header-background: #F8F8F8;
 $fontweight-800: 800;
 $fontweight-600: 600;
+$fontweight-500: 500;
 $section-default-fong-weight: 100;
+
+#stats-right-section {
+  margin-top: 20px;
+}
 
 .sections {
   margin-top: 70px;
@@ -32,7 +37,7 @@ $section-default-fong-weight: 100;
 }
 
 .list-box {
-    height: 465px;
+    height: 360px;
     overflow-y: auto;
 }
 
@@ -96,13 +101,13 @@ $section-default-fong-weight: 100;
 }
 
 @media screen and (max-width: 1200px) {
-	.bars {
+  .logs.list-header {
+    margin: 15px 0 15px 0;
+  }
+
+  .bars {
 		margin-left: -15px;
 	}
-
-  .stats-right-section {
-    margin-top: 20px;
-  }
 
   td {
     clear: both;
@@ -137,5 +142,17 @@ $section-default-fong-weight: 100;
 
   li {
     padding: 4.5px;
+  }
+}
+
+.logs {
+  margin-top: 35px;
+
+  p {
+    font-weight: $fontweight-500;
+  }
+  a {
+    cursor: pointer;
+    text-decoration: none;
   }
 }

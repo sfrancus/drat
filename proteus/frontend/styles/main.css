@@ -145,6 +145,9 @@ input[readonly] {
     font-size: 11px;
     height: 34px;
     width: 91.8%; } }
+#stats-right-section {
+  margin-top: 20px; }
+
 .sections {
   margin-top: 70px;
   color: #4C4C4C;
@@ -168,7 +171,7 @@ input[readonly] {
   background: #E8E8E8; }
 
 .list-box {
-  height: 465px;
+  height: 360px;
   overflow-y: auto; }
 
 #icon {
@@ -219,11 +222,11 @@ input[readonly] {
   margin-top: 11px; }
 
 @media screen and (max-width: 1200px) {
+  .logs.list-header {
+    margin: 15px 0 15px 0; }
+
   .bars {
     margin-left: -15px; }
-
-  .stats-right-section {
-    margin-top: 20px; }
 
   td {
     clear: both;
@@ -246,5 +249,13 @@ input[readonly] {
   margin-top: 5px; }
   .drat-stats-list li {
     padding: 4.5px; }
+
+.logs {
+  margin-top: 35px; }
+  .logs p {
+    font-weight: 500; }
+  .logs a {
+    cursor: pointer;
+    text-decoration: none; }
 
 /*# sourceMappingURL=main.css.map */
