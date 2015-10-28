@@ -5,5 +5,4 @@ To run the pages, you should do the following:
 3. Go to the browser and type in a browser: localhost:8000
 4. To see the second page, type in a browser: localhost:8000/second.html
 
-So far, the data is hard-coded, so there is no upload availability in the login page, but once the data becomes available,
-I wil be able to use it to draw the graphs using the available data. 
+So far, the data is hard-coded, so there is no upload availability in the login page, but once the data becomes available, I wil be able to use it to draw the graphs using the available data. 
