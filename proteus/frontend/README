@@ -1,2 +1,9 @@
-The front-end repository of DRAT. All the JS, SASS, CSS, and HTML files will be here. 
+To run the pages, you should do the following:
 
+1. Navigate to the frontend foloder. (cd ~/frontend)
+2. Run the following command: (php -S localhost:8000)
+3. Go to the browser and type in a browser: localhost:8000
+4. To see the second page, type in a browser: localhost:8000/second.html
+
+So far, the data is hard-coded, so there is no upload availability in the login page, but once the data becomes available,
+I wil be able to use it to draw the graphs using the available data. 
