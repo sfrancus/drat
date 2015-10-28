@@ -10,7 +10,7 @@ import java.io.InputStreamReader;
  */
 public class ProcessDratWrapper extends GenericProcess implements AbstractDratWrapper {
     private static final String DRAT = FileConstants.DRAT_PATH;
-    private String path = "/Users/junsuhlee/CSCI401/drat/src";
+    private String path = "/Users/junsuhlee/CSCI401/drat/src/crawler";
     private boolean isIndexedFlag = false;
     public ProcessDratWrapper() {
         super(DRAT);
@@ -51,5 +51,13 @@ public class ProcessDratWrapper extends GenericProcess implements AbstractDratWr
             throw new DratWrapperException();
         }
         super.createProcess("reduce");
+    }
+
+    public boolean go() throws IOException, DratWrapperException {
+        if(isIndexedFlag) {
+            throw new DratWrapperException();
+        }
+        super.createProcess("go", this.path);
+        return true;
     }
 }

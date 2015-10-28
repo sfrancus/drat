@@ -9,4 +9,5 @@ public interface AbstractDratWrapper {
     public void index() throws Exception;
     public void map() throws Exception;
     public void reduce() throws Exception;
+    public boolean go() throws Exception;
 }
