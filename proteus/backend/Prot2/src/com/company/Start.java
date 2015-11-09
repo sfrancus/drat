@@ -20,7 +20,7 @@ public class Start {
 
             restartDrat();
 
-            finishJob();
+          //  finishJob();
         }
         catch(Exception e) {
             e.printStackTrace();
@@ -50,7 +50,25 @@ public class Start {
     }
     public static boolean restartDrat() throws Exception {
 
-        dratWrapper.go();
+        dratWrapper.crawl();
+        try {
+            Thread.sleep(5000);
+        } catch(InterruptedException ex) {
+            Thread.currentThread().interrupt();
+        }
+        dratWrapper.index();
+        try {
+            Thread.sleep(5000);
+        } catch(InterruptedException ex) {
+            Thread.currentThread().interrupt();
+        }
+        dratWrapper.map();
+        try {
+            Thread.sleep(5000);
+        } catch(InterruptedException ex) {
+            Thread.currentThread().interrupt();
+        }
+        dratWrapper.reduce();
         try {
             Thread.sleep(5000);
         } catch(InterruptedException ex) {
