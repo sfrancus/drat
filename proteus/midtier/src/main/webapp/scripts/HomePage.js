@@ -255,7 +255,7 @@
 		$scope.goSecondPage = true;
          var go = {
                       method: 'POST',
-                      url: '/drat/go',
+                      url: 'drat/go',
                       data: {
                       dirPath: path
                        }
@@ -266,6 +266,7 @@
 
 			setTimeout(function() {
 				getHealthMonitorService();
+				getDratStatus();
                }, 3000);
 
 
@@ -288,7 +289,7 @@
 	    function getHealthMonitorService(){
         		var recent = $http({
                       method: "GET",
-                      url: '/service/status/oodt/raw'
+                      url: 'service/status/oodt/raw'
                   })
                   .then(function(response) {
                         //put num rat finished
