@@ -10,22 +10,18 @@
 
 
   angular
-  .module('drat', [])
+  .module('drat', ['ui.bootstrap'])
   .controller('switch', ['$scope','$http', function($scope, $http){
       $scope.goToTwo = function() {
         console.log("goes");
       }
       $scope.max = 100;
 
-      $scope.generateProgress = function() {
-        $scope.value = 60;
 
-        $scope.dynamic = $scope.value;
-      }
-      $scope.generateProgress();
 
       // this indicates which step the app is on
-      $scope.steps = ['Indexing', 'Finished'];
+      $scope.value = 0;
+      $scope.steps = ['Starting..'];
 
       // scanned list array
       $scope.arrayOfScannedFiles = [
@@ -255,7 +251,7 @@
 		$scope.goSecondPage = true;
          var go = {
                       method: 'POST',
-                      url: 'drat/go',
+                      url: '/drat/go',
                       data: {
                       dirPath: path
                        }
@@ -266,21 +262,16 @@
 
 			setTimeout(function() {
 				getHealthMonitorService();
-				getDratStatus();
+				checkingDratStatus();
                }, 3000);
 
 
-		var getSizePath = '/service/repository/size?dir=' + path;
-
-//		var size = $http({
-//                      method: "GET",
-//                      url: getSizePath
-//                  })
-//                  .then(function(response) {
-//
-//				var dd = response;
-//
-//           });
+		var getSizePath = '/service/repo/size';
+        var checkingDrat;
+        $http.get(getSizePath)
+        .success(function(response){
+                $scope.repoSizeInfo = response;
+        })
 
 
 
@@ -289,13 +280,80 @@
 	    function getHealthMonitorService(){
         		var recent = $http({
                       method: "GET",
-                      url: 'service/status/oodt/raw'
+                      url: '/service/status/oodt/raw'
                   })
                   .then(function(response) {
                         //put num rat finished
                         var res = response
                        $scope.numORatFinished = 24;
                  });
+
+        };
+        function checkingDratStatus(){
+                 checkingDrat =  setInterval(function() {
+                       getDratStatus();
+                       if($scope.steps[0] == "Crawling"){
+                          getRecentIngestedFiles();
+                       }
+                 }, 500);
+
+        };
+        function getDratStatus(){
+
+
+                                                var recent = $http({
+                                                      method: "GET",
+                                                      url: '/service/status/drat'
+                                                   })
+                                           .then(function(response) {
+                                           var res = response
+
+                                           if(response.data.currentState == "CRAWL"){
+                                                  $scope.value = 0;
+                                                  $scope.steps[0] = "Crawling";
+                                           }else if(response.data.currentState == "INDEX"){
+                                                     $scope.value = 25;
+                                                     $scope.steps[0] = "Indexing";
+                                           }else if(response.data.currentState == "MAP"){
+                                                     $scope.value = 50;
+                                                     $scope.steps[0] = "Maping";
+                                         }else if(response.data.currentState == "REDUCE"){
+                                                     $scope.value = 75;
+                                                     $scope.steps[0] = "Reducing";
+                                                     $scope.reduced = true;
+                                         }else if(response.data.currentState == "IDLE"){
+                                                   if($scope.reduced){
+                                                      $scope.value = 100;
+                                                      $scope.steps[0] = "Completed";
+                                                   }
+
+                                            }
+                                            $scope.dynamic = $scope.value;
+
+                                                            //if IDLE
+                                           //  clearInterval(checkingDrat);
+                                            });
+
+
+
+        };
+
+        function getRecentIngestedFiles(){
+                      var recent = $http({
+                                method: "GET",
+                                 url: '/service/products'
+                                })
+                            .then(function(response) {
+                              if(response.data.length == 20){
+                                for(var i = 0 ; i < 20; i ++){
+                                    $scope.arrayOfScannedFiles[0].listId = i;
+                                    $scope.arrayOfScannedFiles[0].listName = response.data[i].title;
+
+                                }
+                              }
+
+                      });
+
 
         };
 
